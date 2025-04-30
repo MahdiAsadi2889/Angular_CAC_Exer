@@ -1,0 +1,8 @@
+<div *ngFor="let product of products">
+  <div *ngIf="product.isAvailable()">
+    <h3>{{product.name}}</h3>
+    <h3>{{product.price}}</h3>
+    <h3>{{product.quantity}}</h3>
+    <h3>{{product.rate}}</h3>
+  </div>
+</div>
