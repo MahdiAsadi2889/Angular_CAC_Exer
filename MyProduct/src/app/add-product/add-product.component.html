@@ -1,0 +1,23 @@
+<form #productForm="ngForm" (ngSubmit)="onAddProduct(productForm)">
+  <label>Name: </label>
+  <input
+    type="text"
+    placeholder="Product Name"
+    [(ngModel)]="productName"
+    name="name"
+    required
+  />
+  <br />
+  <button type="submit">Submit</button>
+  <br>
+  <label>Price: </label>
+  <input
+    type="text"
+    class="pricePro"
+    placeholder="Price"
+    [(ngModel)]="productPrice"
+    name="price"
+    required
+    min="1"
+  />
+</form>

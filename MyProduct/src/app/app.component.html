@@ -1,0 +1,8 @@
+<app-add-product (productAdded)="onProductAdded($event)"></app-add-product>
+<hr />
+<br />
+<ul>
+  <li *ngFor="let product of products">
+    {{ product.name }} - {{ product.price }}
+  </li>
+</ul>
