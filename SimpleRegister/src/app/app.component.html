@@ -1,0 +1,35 @@
+<h2>Register Form</h2>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <label>UserName:</label>
+  <input type="text" formControlName="username" />
+  <div
+    *ngIf="form.get('username')?.errors?.['required'] && form.get('username')?.touched"
+  >
+    UserName is Required
+  </div>
+  <br />
+
+  <label>Password:</label>
+  <input type="text" formControlName="password" />
+  <div
+    *ngIf="form.get('password')?.errors?.['required'] && form.get('password')?.touched"
+  >
+    Password is Required
+  </div>
+  <div
+    *ngIf="form.get('password')?.errors?.['minlength'] && form.get('confirmpassword')?.touched"
+  >
+    Password must be at least 6 characters
+  </div>
+  <br />
+
+  <label>ConfirmPassword:</label>
+  <input type="text" formControlName="confirmpassword" />
+  <div *ngIf="!isPasswordMatch && form.get('confirmpassword')?.touched">
+    Passwords is not equals
+  </div>
+
+  <br />
+
+  <button type="submit">Register</button>
+</form>
