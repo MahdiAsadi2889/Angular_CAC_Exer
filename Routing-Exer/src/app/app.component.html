@@ -1,0 +1,9 @@
+<ng-container *ngIf="currentRoute === '/' ; else simpleHeader">
+    <app-header type="home"></app-header>
+  </ng-container>
+  
+  <ng-template #simpleHeader>
+    <app-header-other-page type="#simpleHeader"></app-header-other-page>
+  </ng-template>
+<router-outlet></router-outlet>
+<app-footer></app-footer>
